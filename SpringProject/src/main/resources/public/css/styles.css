@@ -10,7 +10,7 @@ body>header>a>img, body>header a  {
     font-size: 1.2em;
 }
 
-body>footer {
+body>div>footer {
     background: #eee;
     padding: 5px;
     margin: 10px 0;
