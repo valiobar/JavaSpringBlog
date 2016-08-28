@@ -6,22 +6,12 @@
 </head>
 
 <body>
+
 <header th:replace="layout :: site-header" />
-
+<div>
+<nav th:replace="layout :: navbar"/>
+</div>
 <main id="posts">
-    <div class="col-md-3">
-        <aside>
-            <h2>Recent Posts</h2>
-           <ul >
-           <li th:each="p : ${latest5posts}" >
-               <a href="#" th:text="${p.title}"
-               th:href="@{/posts/view/{id}/(id=${p.id})}">Work Begins on HTML5.1
-               </a>
-           </li>
-           </ul>
-        </aside>
-
-    </div>
     <div class="col-md-9">
     <article th:each="p : ${latest3posts}">
         <h2 class="title" th:text="${p.title}">Post Title</h2>
@@ -36,7 +26,21 @@
         <p class="content" th:utext="${p.body}">Post content</p>
     </article>
     </div>
+    <div class="col-md-3">
+    <div class="recentPosts ">
 
+        <aside>
+            <h2>Recent Posts</h2>
+            <ul >
+                <li th:each="p : ${latest5posts}" >
+                    <a href="#" th:text="${p.title}"
+                       th:href="@{/posts/view/{id}/(id=${p.id})}">Work Begins on HTML5.1
+                    </a>
+                </li>
+            </ul>
+        </aside>
+    </div>
+    </div>
 </main>
 </body>
 <div class="col-md-12">
